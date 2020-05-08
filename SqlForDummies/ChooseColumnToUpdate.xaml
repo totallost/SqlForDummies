@@ -1,0 +1,56 @@
+﻿<Page x:Class="SqlForDummies.ChooseColumnToUpdate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SqlForDummies"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}"
+      Title="ChooseColumnToUpdate">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Stretch">
+            <Label Content="רשימת העמודות שנבחרו" FontSize="18" HorizontalAlignment="Center"/>
+            <ListBox x:Name="ChosenColumnListBox"   HorizontalContentAlignment="Stretch" MaxHeight="350">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding ColumnName}" Width="200"></Label>
+                            <TextBox Width="200" Text="{Binding UpdateValue, Mode=TwoWay}"/>
+                            <Button x:Name="delBtn" 
+                                    Click="DelBtn_Click" 
+                                    Background="Red"
+                                    Width="100"
+                                    HorizontalAlignment="Right">
+                                הסר
+                            </Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Stretch">
+            <Label Content="בחר את העמודות שאותן תרצה לעדכן" FontSize="15" HorizontalAlignment="Center"/>
+            <ComboBox x:Name="ColumnBox"
+                      FontSize="15"
+                      Margin="25">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock  Text="{Binding ColumnName}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Content="הוסף" Margin="20" Width="150" Height="35" x:Name="AddBtn" Click="AddBtn_Click"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="חזור" Margin="0,100,0,0" Width="100" Height="35" x:Name="BckBtn" Click="BckBtn_Click" VerticalAlignment="Bottom"/>
+                <Button Content="המשך" Margin="0,100,0,0" Width="100" Height="35" x:Name="CntnBtn" Click="CntnBtn_Click" VerticalAlignment="Bottom"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

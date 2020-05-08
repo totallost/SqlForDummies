@@ -1,0 +1,40 @@
+﻿<Page x:Class="SqlForDummies.Connect"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SqlForDummies"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="connect"
+      DragDrop.Drop="Page_Drop" AllowDrop="True">
+    <StackPanel Background="White">
+        <Label HorizontalAlignment="Center" FontSize="25" Margin="0,0,0,20">לחלשים - קופה SQL</Label>
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*" ></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+                <TextBox Grid.Column="1" Width="200" Margin="4" x:Name="dbUser"/>
+                <PasswordBox Grid.Column="1" Width="200" Margin="4" x:Name="dbPassword"/>
+                <TextBox Grid.Column="1" Width="200" x:Name="dbName"  Margin="4">POS</TextBox>
+                <TextBox Grid.Column="1" Width="200" x:Name="serverName"  Margin="4">localhost\SQLEXPRESS</TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">
+                <Label Content="Username" Grid.Column="0"/>
+                <Label Content="Password" Grid.Column="0"/>
+                <Label Content="Database" Grid.Column="0"/>
+                <Label Content="Server Name" Grid.Column="0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+                <Button Width="100" Height="30" Click="Button_Click" Margin="25">Connect</Button>
+            </StackPanel>
+        </Grid>
+        <Label x:Name="ConnectionLoadingLabel" Content="...מתחבר" FontSize="25" HorizontalAlignment="Center" Visibility="Hidden" Foreground="Red"/>
+    </StackPanel>
+</Page>

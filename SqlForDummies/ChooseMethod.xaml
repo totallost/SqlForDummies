@@ -1,0 +1,20 @@
+﻿<Page x:Class="SqlForDummies.ChooseMethod"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SqlForDummies"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChooseMethod">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" x:Name="UpdateDb" Click="Button_Click" Height="200" FontSize="30" FontWeight="Bold">עדכן</Button>
+        <Button Grid.Column="1" x:Name="DeleteDb" Click="Button_Click" Height="200" FontSize="30" FontWeight="Bold">מחק</Button>
+        <Button Grid.Column="2" x:Name="SelectDb" Click="Button_Click" Height="200" FontSize="30" FontWeight="Bold">הצג</Button>
+    </Grid>
+</Page>
